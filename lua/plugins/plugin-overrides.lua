@@ -5,17 +5,6 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  -- add Nordic colorscheme
-  { "AlexvZyl/nordic.nvim" },
-
-  -- Configure LazyVim to load Nordic
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "nordic",
-    },
-  },
-
   -- active indent guide and indent text objects
   {
     "echasnovski/mini.indentscope",
