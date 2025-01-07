@@ -11,3 +11,5 @@ opt.expandtab = false
 
 -- Editor Behaviour
 opt.autowrite = false
+
+vim.g.autoformat = false
