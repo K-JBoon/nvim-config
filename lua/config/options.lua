@@ -11,5 +11,8 @@ opt.expandtab = false
 
 -- Editor Behaviour
 opt.autowrite = false
+opt.autoread = true
+opt.backupcopy = "yes"
+opt.autochdir = false
 
 vim.g.autoformat = false

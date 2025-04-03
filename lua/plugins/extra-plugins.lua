@@ -13,19 +13,6 @@ return {
 	},
 
 	{
-		"utilyre/barbecue.nvim",
-		name = "barbecue",
-		version = "*",
-		dependencies = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
-		},
-		opts = {
-			-- configurations go here
-		},
-	},
-
-	{
 		-- Install markdown preview, use npx if available.
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -42,32 +29,26 @@ return {
 			if vim.fn.executable "npx" then vim.g.mkdp_filetypes = { "markdown" } end
 		end,
 	},
-
 	{
-		"yetone/avante.nvim",
-		event = "VeryLazy",
-		lazy = false,
-		version = false, -- set this to "*" if you want to always pull the latest change, false to update on release
+		"folke/snacks.nvim",
+		---@type snacks.Config
 		opts = {
-			-- add any opts here
-		},
-		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-		build = "make",
-		dependencies = {
-			"stevearc/dressing.nvim",
-			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
-			--- The below dependencies are optional,
-			"hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-			{
-				-- Make sure to set this up properly if you have lazy=true
-				'MeanderingProgrammer/render-markdown.nvim',
-				opts = {
-					file_types = { "markdown", "Avante" },
-				},
-				ft = { "markdown", "Avante" },
+			explorer = {
+				-- your explorer configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
 			},
-		},
+			picker = {
+				cwd = vim.fn.getcwd(),
+				filter = {
+					cwd = true
+				},
+				sources = {
+					explorer = {
+						autochdir = false
+					}
+				}
+			}
+		}
 	}
 }
